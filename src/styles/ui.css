@@ -1,0 +1,27 @@
+/* ===== Shared page + UI styles ===== */
+.pg { margin: -20px; padding: 24px; min-height: calc(100vh - 64px); background: linear-gradient(180deg, #f3f0ff 0%, #f8f6ff 100%); color: #1b1a2e; }
+@media (max-width: 640px) { .pg { margin: -14px; padding: 16px; } }
+.pg h1 { font-size: 30px; font-weight: 800; line-height: 1.15; }
+.pg-crumb { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; }
+.pg-crumb b { color: #6d28d9; }
+.pg-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+.pg-head p { color: #5b5870; margin-top: 4px; font-size: 15px; }
+.pg-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 12px; border: 1px solid transparent; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer; white-space: nowrap; }
+.btn-primary { background: linear-gradient(90deg, #6a1ff0, #8b3dff); color: #fff; box-shadow: 0 6px 16px rgba(109, 40, 217, 0.3); }
+.btn-primary:hover { box-shadow: 0 8px 20px rgba(109, 40, 217, 0.45); }
+.btn-outline { background: #fff; border-color: #ddd5f5; color: #1b1a2e; }
+.btn-outline:hover { background: #f6f2ff; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; box-shadow: none; }
+
+.card { background: #fff; border: 1px solid #ece8f8; border-radius: 16px; box-shadow: 0 4px 16px rgba(80, 50, 160, 0.06); min-width: 0; }
+
+/* status pills */
+.st { display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border-radius: 8px; font-size: 13px; font-weight: 700; white-space: nowrap; }
+.st svg { width: 15px; height: 15px; }
+.st.authorized { background: #d7f5e6; color: #0f7a4d; }
+.st.pending, .st.draft { background: #ffe9cf; color: #b45309; }
+.st.unauthorized { background: #e8e6f0; color: #4a4860; }
+.st.discontinued { background: #e6defc; color: #5b2bd6; }
+.st.cancelled { background: #ffdede; color: #dc2626; }

@@ -1,0 +1,101 @@
+/* ===== Sidebar (page ke upar overlay) ===== */
+.sb-backdrop {
+  position: fixed; inset: 0; z-index: 999;
+  background: rgba(10, 6, 30, 0.5);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.sb-backdrop.show { opacity: 1; pointer-events: auto; }
+
+.sb {
+  position: fixed; top: 0; left: 0; z-index: 1000;
+  height: 100vh; height: 100dvh;
+  width: 300px; max-width: 88vw;
+  display: flex; flex-direction: column;
+  background: linear-gradient(180deg, #15103a 0%, #1c1450 60%, #241a5e 100%);
+  color: #e6e1ff;
+  transform: translateX(-100%);
+  transition: transform 0.25s ease;
+  box-shadow: 8px 0 30px rgba(10, 6, 30, 0.35);
+}
+.sb.open { transform: translateX(0); }
+
+/* head */
+.sb-head { display: flex; align-items: center; gap: 12px; padding: 16px 16px 14px; }
+.sb-logo {
+  width: 42px; height: 42px; border-radius: 11px; flex: 0 0 auto;
+  display: grid; place-items: center; font-size: 24px; font-weight: 800; color: #fff;
+  background: linear-gradient(135deg, #8b5cf6, #5b2bd6);
+  box-shadow: 0 6px 16px rgba(124, 77, 255, 0.45);
+}
+.sb-brand b { display: block; font-size: 21px; font-weight: 800; color: #fff; line-height: 1.1; }
+.sb-brand small { font-size: 12px; color: #cfc8f5; }
+.sb-collapse { margin-left: auto; background: none; border: none; color: #fff; cursor: pointer; display: grid; place-items: center; padding: 4px; }
+
+/* scroll area */
+.sb-scroll { flex: 1; overflow-y: auto; padding: 0 12px 28px; scrollbar-width: thin; scrollbar-color: #4a3b9a transparent; }
+
+/* home */
+.sb-home {
+  display: flex; align-items: center; gap: 12px;
+  padding: 11px 14px; margin: 2px 0 6px;
+  border-radius: 10px; color: #fff; text-decoration: none; font-weight: 700; font-size: 16px;
+}
+.sb-home:hover { background: rgba(255, 255, 255, 0.07); }
+.sb-home.active { background: linear-gradient(90deg, #6a3df0, #8b5cf6); box-shadow: 0 6px 16px rgba(106, 61, 240, 0.4); }
+
+/* group head */
+.sb-group-head {
+  width: 100%; display: flex; align-items: center; gap: 12px;
+  padding: 10px 10px; border: none; background: none; cursor: pointer;
+  color: #fff; font-family: inherit; font-size: 15px; font-weight: 700; text-align: left;
+  border-radius: 8px;
+}
+.sb-group-head:hover { background: rgba(255, 255, 255, 0.05); }
+.sb-label { flex: 1; }
+.sb-icon { display: grid; place-items: center; flex: 0 0 auto; color: #e9e4ff; }
+.sb-chev { display: grid; place-items: center; transition: transform 0.2s; }
+.sb-group.closed > .sb-group-head .sb-chev { transform: rotate(180deg); }
+
+/* children list */
+.sb-children { padding: 0 0 8px 44px; }
+
+/* leaf */
+.sb-leaf {
+  display: flex; align-items: center; gap: 10px; width: 100%;
+  padding: 5px 8px; border: none; background: none; border-radius: 6px;
+  color: #d8d2f5; font-family: inherit; font-size: 14px; text-align: left; text-decoration: none; cursor: pointer;
+}
+.sb-leaf::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #8b5cf6; flex: 0 0 auto; }
+.sb-leaf:hover { color: #fff; background: rgba(255, 255, 255, 0.06); }
+.sb-leaf.active { color: #fff; font-weight: 700; background: rgba(139, 92, 246, 0.28); }
+.sb-leaf.active::before { background: #fff; }
+.sb-leaf.soon { cursor: default; }
+
+/* depth 0 : main sections */
+.sb-group.d0 { border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+.sb-group.d0:last-child { border-bottom: none; }
+.sb-group.d0.accent { margin-top: 6px; border-bottom: none; }
+.sb-group.d0.accent > .sb-group-head {
+  padding: 11px 12px; border-radius: 10px;
+  background: linear-gradient(90deg, rgba(106, 61, 240, 0.65), rgba(139, 92, 246, 0.4));
+}
+.sb-group.d0.accent > .sb-children { padding: 8px 0 0 0; }
+
+/* depth 1 : boxed sub sections inside Settings */
+.sb-group.d1 {
+  margin-bottom: 8px; padding: 2px 6px 4px;
+  border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+}
+.sb-group.d1 > .sb-group-head { font-size: 14px; padding: 9px 6px; }
+.sb-group.d1 > .sb-children { padding-left: 38px; }
+.sb-group.d1 .sb-leaf { font-size: 13.5px; }
+
+/* depth 2 : groups inside Product Masters */
+.sb-group.d2 { border-top: 1px solid rgba(255, 255, 255, 0.08); }
+.sb-group.d2:first-child { border-top: none; }
+.sb-group.d2 > .sb-group-head { font-size: 13.5px; padding: 8px 4px; }
+.sb-group.d2 > .sb-children { padding-left: 32px; padding-bottom: 6px; }
+.sb-group.d2 .sb-leaf { font-size: 13px; padding: 3px 8px; }
+.sb-group.d2 .sb-chev { display: none; }

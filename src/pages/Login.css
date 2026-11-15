@@ -1,0 +1,192 @@
+/* ===== Login page (BizBridge) ===== */
+.bb-page {
+  --bb-primary: #6d28d9;
+  --bb-primary-light: #8b3dff;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  background: #1a0b3d;
+  font-family: "Segoe UI", Inter, Arial, sans-serif;
+}
+
+/* ---------- Left ---------- */
+.bb-left {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  padding: 40px 48px 32px;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(circle at 75% 45%, rgba(139, 61, 255, 0.45), transparent 45%),
+    radial-gradient(circle at 10% 90%, rgba(109, 40, 217, 0.5), transparent 40%),
+    linear-gradient(160deg, #1a0b3d 0%, #2b1468 100%);
+}
+
+.bb-logo { display: flex; align-items: center; gap: 12px; position: relative; z-index: 2; }
+.bb-logo-mark {
+  width: 42px; height: 42px; border-radius: 10px;
+  display: grid; place-items: center;
+  font-weight: 800; font-size: 24px;
+  background: linear-gradient(135deg, #a855f7, #6d28d9);
+  box-shadow: 0 6px 18px rgba(139, 61, 255, 0.5);
+}
+.bb-logo-text { font-size: 28px; font-weight: 700; }
+
+.bb-hero { margin-top: 36px; position: relative; z-index: 2; max-width: 520px; }
+.bb-tag {
+  display: inline-block;
+  padding: 7px 16px;
+  border: 1px solid rgba(168, 120, 255, 0.7);
+  border-radius: 8px;
+  background: rgba(139, 61, 255, 0.15);
+  color: #d8c2ff;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+.bb-hero h1 {
+  margin-top: 22px;
+  font-size: clamp(32px, 3.6vw, 52px);
+  line-height: 1.12;
+  font-weight: 800;
+}
+.bb-hero h1 span { display: block; color: #b57bff; }
+.bb-hero p { margin-top: 18px; font-size: 17px; line-height: 1.5; color: #d9d2ee; }
+
+/* Decorative globe (CSS). Isko apni image se replace kar sakte ho */
+.bb-globe {
+  position: absolute;
+  right: -90px;
+  bottom: 90px;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(200, 160, 255, 0.55) 1.5px, transparent 2px) 0 0 / 14px 14px,
+    radial-gradient(circle at 40% 35%, rgba(139, 61, 255, 0.35), rgba(60, 20, 130, 0.15) 70%);
+  box-shadow: 0 0 80px rgba(139, 61, 255, 0.45), inset 0 0 60px rgba(139, 61, 255, 0.35);
+  opacity: 0.85;
+  z-index: 1;
+}
+
+.bb-features {
+  margin-top: auto;
+  padding-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  position: relative;
+  z-index: 2;
+}
+.bb-feature {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  text-align: center;
+  padding: 18px 8px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(6px);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* ---------- Right ---------- */
+.bb-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  background: linear-gradient(180deg, #ffffff, #f6f2ff);
+  border-radius: 28px 0 0 28px;
+  position: relative;
+  z-index: 3;
+}
+.bb-form { width: 100%; max-width: 480px; }
+
+.bb-form h2 { text-align: center; font-size: clamp(26px, 3vw, 38px); font-weight: 800; color: #111; }
+.bb-form h2 span { color: var(--bb-primary-light); }
+.bb-sub { text-align: center; color: #5b5870; margin: 8px 0 32px; font-size: 16px; }
+
+.bb-label { display: block; font-weight: 700; font-size: 15px; color: #111; margin-bottom: 8px; }
+.bb-label-row { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; }
+.bb-label-row .bb-label { margin-bottom: 8px; }
+.bb-link { color: var(--bb-primary-light); font-weight: 600; font-size: 14px; text-decoration: none; margin-bottom: 8px; }
+.bb-link:hover { text-decoration: underline; }
+
+.bb-input {
+  display: flex; align-items: center; gap: 12px;
+  height: 54px; padding: 0 16px;
+  background: #fff;
+  border: 1px solid #ddd8ea;
+  border-radius: 14px;
+  color: #444;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.bb-input:focus-within { border-color: var(--bb-primary-light); box-shadow: 0 0 0 3px rgba(139, 61, 255, 0.15); }
+.bb-input input { flex: 1; min-width: 0; border: none; outline: none; background: transparent; font-size: 16px; color: #111; }
+.bb-input input::placeholder { color: #8a869c; }
+.bb-eye { background: none; border: none; cursor: pointer; color: #333; display: grid; place-items: center; padding: 4px; }
+
+.bb-check { display: flex; align-items: center; gap: 10px; margin-top: 20px; font-size: 15px; font-weight: 500; cursor: pointer; }
+.bb-check input { width: 20px; height: 20px; accent-color: var(--bb-primary-light); cursor: pointer; }
+
+.bb-submit {
+  width: 100%; height: 54px; margin-top: 26px;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  border: none; border-radius: 14px; cursor: pointer;
+  color: #fff; font-size: 18px; font-weight: 700;
+  background: linear-gradient(90deg, #6a1ff0, #8b3dff);
+  box-shadow: 0 10px 24px rgba(109, 40, 217, 0.35);
+  transition: transform 0.1s, box-shadow 0.15s;
+}
+.bb-submit:hover { box-shadow: 0 12px 28px rgba(109, 40, 217, 0.5); }
+.bb-submit:active { transform: scale(0.99); }
+
+.bb-divider { display: flex; align-items: center; gap: 14px; margin: 26px 0 20px; color: #555; font-size: 14px; }
+.bb-divider::before, .bb-divider::after { content: ""; flex: 1; height: 1px; background: #e2dff0; }
+
+.bb-social { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.bb-social button {
+  height: 52px; display: flex; align-items: center; justify-content: center; gap: 10px;
+  background: #fff; border: 1px solid #ddd8ea; border-radius: 14px;
+  font-size: 14.5px; font-weight: 600; color: #111; cursor: pointer;
+}
+.bb-social button:hover { background: #faf8ff; border-color: #c9bfe6; }
+
+.bb-secure { margin-top: 30px; display: flex; align-items: center; justify-content: center; gap: 8px; color: #6d28d9; font-size: 14px; }
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1100px) {
+  .bb-left { padding: 32px 28px 28px; }
+  .bb-features { grid-template-columns: repeat(2, 1fr); }
+  .bb-globe { width: 340px; height: 340px; right: -110px; bottom: 170px; }
+}
+
+/* ---------- Mobile: ek column, upar chhota brand header ---------- */
+@media (max-width: 860px) {
+  .bb-page { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+  .bb-left { padding: 24px 22px 56px; }
+  .bb-hero { margin-top: 20px; }
+  .bb-hero h1 { font-size: 28px; margin-top: 14px; }
+  .bb-hero p { display: none; }
+  .bb-tag { font-size: 12px; padding: 5px 12px; }
+  .bb-logo-text { font-size: 24px; }
+  .bb-globe, .bb-features { display: none; }
+
+  .bb-right {
+    align-items: flex-start;
+    border-radius: 28px 28px 0 0;
+    margin-top: -28px;
+    padding: 32px 20px 28px;
+  }
+  .bb-sub { margin-bottom: 24px; }
+}
+
+@media (max-width: 480px) {
+  .bb-social { grid-template-columns: 1fr; }
+  .bb-form h2 { font-size: 24px; }
+  .bb-input { height: 50px; }
+  .bb-submit { height: 50px; font-size: 17px; }
+}
