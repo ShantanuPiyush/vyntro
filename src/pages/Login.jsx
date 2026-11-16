@@ -161,7 +161,7 @@ export default function Login() {
       <section className="bb-right">
         <form className="bb-form" onSubmit={handleLogin}>
           <h2>
-            Welcome to <span>BizBridge</span>
+            Welcome to <span>Vyntro</span>
           </h2>
           <p className="bb-sub">Sign in to access your business workspace.</p>
 
