@@ -156,7 +156,7 @@ const initial = {
   packRemarks: "",
   // step 5
   currency: "USD – US Dollar", rate: 83.5, price: 320, moq: 10, priceType: "FOB", lead: 45, validity: 90,
-  designer: "Studio Nova", madeBy: "BizBridge Crafts", sizeRange: "S, M, L",
+  designer: "Studio Nova", madeBy: "Vyntro Crafts", sizeRange: "S, M, L",
   keywords: ["chair", "lounge", "wooden", "handcrafted"],
   remarks: "Natural wood variation may occur. Custom sizes and finishes available on request.",
   confirm: false,

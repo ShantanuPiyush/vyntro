@@ -1,4 +1,4 @@
-/* ===== Login page (BizBridge) ===== */
+/* ===== Login page (Vyntro) ===== */
 .bb-page {
   --bb-primary: #6d28d9;
   --bb-primary-light: #8b3dff;
@@ -144,16 +144,6 @@
 .bb-submit:hover { box-shadow: 0 12px 28px rgba(109, 40, 217, 0.5); }
 .bb-submit:active { transform: scale(0.99); }
 
-.bb-divider { display: flex; align-items: center; gap: 14px; margin: 26px 0 20px; color: #555; font-size: 14px; }
-.bb-divider::before, .bb-divider::after { content: ""; flex: 1; height: 1px; background: #e2dff0; }
-
-.bb-social { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.bb-social button {
-  height: 52px; display: flex; align-items: center; justify-content: center; gap: 10px;
-  background: #fff; border: 1px solid #ddd8ea; border-radius: 14px;
-  font-size: 14.5px; font-weight: 600; color: #111; cursor: pointer;
-}
-.bb-social button:hover { background: #faf8ff; border-color: #c9bfe6; }
 
 .bb-secure { margin-top: 30px; display: flex; align-items: center; justify-content: center; gap: 8px; color: #6d28d9; font-size: 14px; }
 
@@ -185,7 +175,6 @@
 }
 
 @media (max-width: 480px) {
-  .bb-social { grid-template-columns: 1fr; }
   .bb-form h2 { font-size: 24px; }
   .bb-input { height: 50px; }
   .bb-submit { height: 50px; font-size: 17px; }

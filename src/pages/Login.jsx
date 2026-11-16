@@ -101,8 +101,8 @@ const MicrosoftLogo = () => (
 
 const Logo = () => (
   <div className="bb-logo">
-    <span className="bb-logo-mark">B</span>
-    <span className="bb-logo-text">BizBridge</span>
+    <span className="bb-logo-mark">V</span>
+    <span className="bb-logo-text">Vyntro</span>
   </div>
 );
 
@@ -226,19 +226,6 @@ export default function Login() {
           <button type="submit" className="bb-submit">
             Sign In <ArrowIcon />
           </button>
-
-          <div className="bb-divider">
-            <span>or sign in with</span>
-          </div>
-
-          <div className="bb-social">
-            <button type="button">
-              <GoogleLogo /> Continue with Google
-            </button>
-            <button type="button">
-              <MicrosoftLogo /> Continue with Microsoft
-            </button>
-          </div>
 
           <p className="bb-secure">
             <ShieldIcon /> Secure • Reliable • Business Focused

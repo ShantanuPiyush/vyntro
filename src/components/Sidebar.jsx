@@ -84,9 +84,9 @@ export default function Sidebar({ open, onClose }) {
 
       <aside className={`sb ${open ? "open" : ""}`}>
         <div className="sb-head">
-          <div className="sb-logo">B</div>
+          <div className="sb-logo">V</div>
           <div className="sb-brand">
-            <b>BizBridge</b>
+            <b>Vyntro</b>
             <small>Trade Fair &amp; Sales Platform</small>
           </div>
           <button type="button" className="sb-collapse" onClick={onClose} aria-label="Close menu">
